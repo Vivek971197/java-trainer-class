@@ -47,3 +47,68 @@ public class Main
 --> in instance we need to use this keyword 
 --> in static we make single copy
 --> in instance we make multiple copies
+
+Relationship between classes
+code 3:-
+class Address{
+  private String city;
+  Address(String city){
+    this.city=city;
+  }
+  public String  getCity(){
+    return city;
+  }
+}
+
+class Student{
+  private String name;
+  private Address address;
+  
+  
+  Student(String name, Address address){
+    this.name=name;
+    this.address=address;
+    
+  }
+  void display(){
+    System.out.println(name + "lives"+address.getCity());
+  }
+}
+public class Main {
+    public static void main(String[] args) {
+      Address add=new Address("Delhi");
+      Student s1 = new Student("Aman",add);
+      
+      s1.display();
+      
+     
+  }
+}
+
+
+
+Dependences
+code 4:-
+
+class Payment{
+  void pay(){
+    System.out.println("Payment Successful");
+  }
+}
+class Gpay{
+  void processPayment(Payment p){
+    p.pay();
+  }
+}
+public class Main {
+    public static void main(String[] args) {
+      Gpay pay = new Gpay();
+      Payment payment = new Payment();
+      
+      pay.processPayment(payment);
+      
+      
+     
+  }
+}
+
