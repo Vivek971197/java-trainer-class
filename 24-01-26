@@ -24,3 +24,26 @@ public class Main {
       s.eatingFood();
   }
 }
+
+//inherit the comstructor
+//constructor can be inherited using super keyword
+code 2:-
+
+class Person{
+  Person(String name){
+    System.out.println("Person name:"+ name );
+  }
+}
+class collegeStudent extends Person{
+ collegeStudent(String name){
+   super(name);
+   System.out.println("college student constructor called");
+ }
+}
+
+public class Main {
+    public static void main(String[] args) {
+      collegeStudent c=new collegeStudent("Aman");
+     
+  }
+}
